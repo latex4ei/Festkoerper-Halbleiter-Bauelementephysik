@@ -1,6 +1,6 @@
-# Werkstoffe
+# Festkörper-Halbleiter-Bauelementephysik
 
-[![Build Status](https://travis-ci.org/latex4ei/Werkstoffe.svg?branch=master)](https://travis-ci.org/latex4ei/Werkstoffe)
+[![Build Status](https://travis-ci.org/latex4ei/Festkoerper-Halbleiter-Bauelementephysik.svg?branch=master)](https://travis-ci.org/latex4ei/Festkoerper-Halbleiter-Bauelementephysik)
 [![Join the chat at https://gitter.im/LaTeX4Ei/Lobby](https://badges.gitter.im/LaTeX4Ei/Lobby.svg)](https://gitter.im/LaTeX4Ei/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Formelsammlung für Latex4ei
