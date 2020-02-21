@@ -834,7 +834,7 @@ Sperrschichtkapazität: $c_S = \frac{\varepsilon\varepsilon_0}{\omega(U)}$\\
 Quasi-Fermi-Niveau: $E_{\ir F,n}, E_{\ir F,p}$\qquad In RLZ: $\e U = E_{\ir F,n} - E_{\ir F,p}$\\
 Profil der Löcherdichte (analog für Elektronendichte):\\ $p_n(x) - p_{\ir n0} = p_{\ir n0}\left(\exp\left(\frac{\e U}{k_BT}\right)-1\right)\exp\left(\frac{-(x-w_n)}{\sqrt{D_p\tau_p}}\right)$\\
 %TODO Bild Kap 10 Folie 43
-\section{Feldeffekt-Transistoren (FET-Transistoren)}
+\section{Feldeffekt-Transistoren (FET-Transistoren, u-gest.)}
 %TODO Bild Kap 11 Folie 11
 $U(x)$: Spannung ggü. Source (x=0) \quad $U_{\ir ds}$: Drain-Source-Spannung\\
 $U_{\ir gs} + U(x) = - U_g(x)$\\
@@ -868,7 +868,7 @@ $s_s = -\e\frac{\diff Q}{\diff W_S}$\\
 \subsection{MOSFET}
 $I_d=-Q_n(x)\mu_nb\frac{\diff U}{\diff x}$\\
 $U_{\ir dsSaett} = U_{\ir gs}-U_{\ir gi}+\frac{\epsilon\epsilon_0\e N_A}{c_i^2}\left(1-\sqrt{1+\frac{2c_i^2U_{\ir gs}}{\epsilon\epsilon_0\e N_A}}\right)$\\
-\section{Bipolartransistoren}
+\section{Bipolartransistoren (i-gest.)}
 %TODO Bild S.14 Kap.12
 Durchlasspolung $\rightarrow \ir p^+$ werden in Basis injiziert ($I_{ep}$) und $\e^-$ von B nach E ($I_{en}$)\\
 Sperrpolung $\rightarrow$ meiste $\ir p^+$ von C nach B diffundieren ($I_{cp}$)\\
@@ -881,7 +881,7 @@ $\beta_T = \frac{\text{C-B-Übergang erreichender Elektronenstrom}}{\text{von E 
 $\alpha = \frac{\ir Kollektorstrom}{\ir Emitterstrom}$\qquad
 $\gamma = \frac{\text{in die Basis injizierter Elektronenstrom}}{\text{gesamter Emitterstrom}}$\\
 
-Große Spannungsverstärkung: $U_L = \alpha I_eR_L = \alpha u_{\ir eb} \frac{R_L}{r}$\\
+Große Spannungsverstärkung (Basis-Schaltung): $U_L = \alpha I_eR_L = \alpha u_{\ir eb} \frac{R_L}{r}$\\
 Vereinfachtes Kleinsignal-ESB:\\
 Auffassung des Transistors als Vierpol\\
 $\mat{h_{11} & h_{12} \\ h_{21} & h_{22} } \mat{i_1 \\ u_2} = \mat{u_1 \\ i_2}$\\
