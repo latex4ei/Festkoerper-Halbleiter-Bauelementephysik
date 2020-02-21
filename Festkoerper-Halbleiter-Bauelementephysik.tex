@@ -520,9 +520,14 @@ Metalle, HL, Isolatoren: je nach Füllung der erlaubten Bänder bzw. nach dem Ba
 	\sectionbox{
 			
 		\subsection{Drude-Modell}
+		(Driftgeschwindigkeit und normale Masse)\\
 		$\vec j = -en\vec v_d = \sigma\vec E = en\mu\vec E$\\
 		$\sigma = ne\mu$ mit Beweglichkeit $\mu = \frac{e\tau}{m}$\\
 		$R = \rho \frac{l}{A} = \frac{1}{\sigma} \frac{l}{A}$ 
+		
+		\subsection{Sommerfeld}
+		(Fermigeschwindigkeit und effektive Masse)\\
+		%TODO Bild von B.
 		
 		\subsection{Halleffekt}
 		$m\dot v = -e(\vec \epsilon + \vec v_d \times \vec B) - m \frac{\vec v_d}{\tau}$\\
@@ -865,12 +870,26 @@ $I_d=-Q_n(x)\mu_nb\frac{\diff U}{\diff x}$\\
 $U_{\ir dsSaett} = U_{\ir gs}-U_{\ir gi}+\frac{\epsilon\epsilon_0\e N_A}{c_i^2}\left(1-\sqrt{1+\frac{2c_i^2U_{\ir gs}}{\epsilon\epsilon_0\e N_A}}\right)$\\
 \section{Bipolartransistoren}
 %TODO Bild S.14 Kap.12
+Durchlasspolung $\rightarrow \ir p^+$ werden in Basis injiziert ($I_{ep}$) und $\e^-$ von B nach E ($I_{en}$)\\
+Sperrpolung $\rightarrow$ meiste $\ir p^+$ von C nach B diffundieren ($I_{cp}$)\\
+thermisch aktivierte $\e^-$ von C nach B diff. ($I_{cn}$)\\
+\textbf{Voraussetzung:} sehr kleine Basisweite im Vergleich zur Diffusionslänge ($L_p \gg d_b$) $\Rightarrow I_{bb} = I_{ep} - I_{cp} \rightarrow 0$ \\
+Kompensation von Rekombination durch Bereitstellung von $\e^-$ ($I_{bb}$)\\
 Stromverstärkung = Transportfaktor $\cdot$ Emitterergiebigkeit\\
-$\alpha = \beta_t\gamma \leq 1$\\
+$\alpha = \beta_T\gamma \leq 1$\qquad
+$\beta_T = \frac{\text{C-B-Übergang erreichender Elektronenstrom}}{\text{von E in B injizierter Elektronenstrom}}$\\
+$\alpha = \frac{\ir Kollektorstrom}{\ir Emitterstrom}$\qquad
+$\gamma = \frac{\text{in die Basis injizierter Elektronenstrom}}{\text{gesamter Emitterstrom}}$\\
+
 Große Spannungsverstärkung: $U_L = \alpha I_eR_L = \alpha u_{\ir eb} \frac{R_L}{r}$\\
 Vereinfachtes Kleinsignal-ESB:\\
 Auffassung des Transistors als Vierpol\\
-$\mat{h_{11} & h_{12} \\ h_{21} & h_{22} } \mat{i_1 \\ u_2} = \mat{u_1 \\ i_2}$
+$\mat{h_{11} & h_{12} \\ h_{21} & h_{22} } \mat{i_1 \\ u_2} = \mat{u_1 \\ i_2}$\\
+Emitterschaltung (Näherung $\alpha r_c \gg r_e$):\\
+$\underset{\ir Eingangswiderstand bei kurzgeschl. Ausgang}{h_{12} = \frac{u_1}{i_1}\big|_{u_2=0} = -\frac{\partial U_{eb}}{\partial I_b}\big|_{U_{ce}} \approx r_b+\frac{r_e}{1-\alpha}}$ \ \\
+$\underset{\ir Leerlauf-Spannungsr"uckgewinnung}{h_{12} = \frac{u_1}{u_2}\big|_{i_1=0} = -\frac{\partial U_{eb}}{\partial U_{ce}}\big|_{I_b} \approx \frac{r_e}{r_c(1-\alpha)}}$ \\
+$\underset{\ir Kurzschluss-Stromverst"arkung}{h_{21} = \frac{i_2}{i_1}\big|_{u_2=0} = -\frac{\partial I_c}{\partial I_b}\big|_{U_{ce}} \approx \frac{\alpha}{1-\alpha}}$\\
+$\underset{\ir Leerlauf-Ausgangsleitwert}{h_{22} = \frac{i_2}{u_2}\big|_{i_1=0} = -\frac{\partial I_c}{\partial U_{ce}}\big|_{I_b} \approx \frac{1}{r_c(1-\alpha)}}$\\
 % Ende der Spalten
 \end{multicols*}
 
