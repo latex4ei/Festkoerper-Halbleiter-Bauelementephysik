@@ -520,9 +520,14 @@ Metalle, HL, Isolatoren: je nach Füllung der erlaubten Bänder bzw. nach dem Ba
 	\sectionbox{
 			
 		\subsection{Drude-Modell}
-		$\vec j = -en\vec v_d = \sigma\vec E = \mu\vec E$\\
+		(Driftgeschwindigkeit und normale Masse)\\
+		$\vec j = -en\vec v_d = \sigma\vec E = en\mu\vec E$\\
 		$\sigma = ne\mu$ mit Beweglichkeit $\mu = \frac{e\tau}{m}$\\
 		$R = \rho \frac{l}{A} = \frac{1}{\sigma} \frac{l}{A}$ 
+		
+		\subsection{Sommerfeld}
+		(Fermigeschwindigkeit und effektive Masse)\\
+		%TODO Bild von B.
 		
 		\subsection{Halleffekt}
 		$m\dot v = -e(\vec \epsilon + \vec v_d \times \vec B) - m \frac{\vec v_d}{\tau}$\\
@@ -829,17 +834,62 @@ Sperrschichtkapazität: $c_S = \frac{\varepsilon\varepsilon_0}{\omega(U)}$\\
 Quasi-Fermi-Niveau: $E_{\ir F,n}, E_{\ir F,p}$\qquad In RLZ: $\e U = E_{\ir F,n} - E_{\ir F,p}$\\
 Profil der Löcherdichte (analog für Elektronendichte):\\ $p_n(x) - p_{\ir n0} = p_{\ir n0}\left(\exp\left(\frac{\e U}{k_BT}\right)-1\right)\exp\left(\frac{-(x-w_n)}{\sqrt{D_p\tau_p}}\right)$\\
 %TODO Bild Kap 10 Folie 43
-\section{Feldeffekt-Transistoren (FET-Transistoren)}
+\section{Feldeffekt-Transistoren (FET-Transistoren, u-gest.)}
 %TODO Bild Kap 11 Folie 11
 $U(x)$: Spannung ggü. Source (x=0) \quad $U_{\ir ds}$: Drain-Source-Spannung\\
 $U_{\ir gs} + U(x) = - U_g(x)$\\
 $I_d = \frac{\e n\mu_nbd}{l}\left(U_{\ir ds}-\frac{2}{3\sqrt{U_p+U_D}}\left[(U_D+U_{\ir gs}+U_{\ir ds})^{3/2}-(U_D+U_{\ir gs})^{3/2}\right]\right)$\\
 \textbf{Anlaufbereich:}\\
+Drainstrom: $I_d \approx c_i\mu_n\frac{b}{l}\left(U_{\ir gs}-U_T-\frac{U_{\ir ds}}{2}\right)U_{\ir ds}$\\
 Kanalleitwert: $\frac{\partial I_d}{\partial U_{\ir ds}}|_{\ir U_{\ir gs}} = \frac{\e n\mu_nbd}{l}\left[1-\frac{1}{\sqrt{U_p+U_D}}(U_D+U_{\ir gs}+U_{\ir ds})^{1/2}\right]$\\
 Steilheit: $g_m =\frac{\partial I_d}{\partial (-U_{\ir gs})}|_{\ir U_{\ir ds}} =  \frac{\e n\mu_nbd}{l\sqrt{U_p+U_D}}\left[(U_D+U_{\ir gs}+U_{\ir ds})^{1/2}-(U_D+U_{\ir gs})^{1/2}\right]$\\
 \textbf{Sättigungsbereich:}\\
 Steilheit: $g_m = -\frac{\e n\mu_nbd}{l}\left(\sqrt{\frac{U_D+U_{\ir gs}}{U_p+U_D}}-1\right)$
 %TODO ab Kap 11 Folie 25
+\subsection{Bänderschema (pMOS)}
+$U_g<0$: neg. Spannung am Gate $\rightarrow$ pos. RLZ im HL: Anreicherung (Bandverbiegung nach oben)\\
+$U_g>0$: neg. RLZ im HL: Verarmung (Bandverbiegung nach unten)\\
+$U_g\gg 0$: RLZ erreicht durch zunehmende Verarmung Maximalwert (Bandverbiegung wird so stark, dass sich $E_F$ so nah an $E_L$ befindet wie an $E_V$ tief im HL (Inversion, n-leitender Charakter)\\
+\begin{tabular}{r|l}
+Bandverbiegung: $W_s<0$ & Akkumulation\\
+$W_S=0$ & Flachband-Fall\\
+$\frac{\e U_{\ir gi}}{2}>W_S>0$ & Verarmung\\
+$W_S=\frac{\e U_{\ir gi}}{2}$ & "Midgap" (intrinsisch)\\
+$\e U_{\ir gi}U_{\ir gi}>W_S>\e U_{\ir gi}$ & Schwache Inversion\\
+$W_S\geq \e U_{\ir gi}=\e U_{\ir gi}$ & Starke Inversion\\
+\end{tabular}
+\subsection{Kapatität einer MOS-Struktur: Ladung}
+$Q=-\sqrt{2\epsilon\epsilon_0k_0Tp_0}\left[\frac{n_0}{p_0}\left(\exp\left(\frac{W_S}{k_bT}\right)-\frac{W_S}{k_BT}-1\right)+\exp\left(-\frac{W_S}{k_BT}\right)+\frac{W_S}{k_BT}-1\right]^\frac{1}{2}$\\
+$W_S$: max. Bandwölbung (an der Isolator-HL-Grenzfläche
+%TODO Bild S.37 Kap.11
+Diff. Kapazität (stationärer Fall):\\
+$s_s = -\e\frac{\diff Q}{\diff W_S}$\\
+%TODO Bild S.40 Kap.11
+\subsection{MOSFET}
+$I_d=-Q_n(x)\mu_nb\frac{\diff U}{\diff x}$\\
+$U_{\ir dsSaett} = U_{\ir gs}-U_{\ir gi}+\frac{\epsilon\epsilon_0\e N_A}{c_i^2}\left(1-\sqrt{1+\frac{2c_i^2U_{\ir gs}}{\epsilon\epsilon_0\e N_A}}\right)$\\
+\section{Bipolartransistoren (i-gest.)}
+%TODO Bild S.14 Kap.12
+Durchlasspolung $\rightarrow \ir p^+$ werden in Basis injiziert ($I_{ep}$) und $\e^-$ von B nach E ($I_{en}$)\\
+Sperrpolung $\rightarrow$ meiste $\ir p^+$ von C nach B diffundieren ($I_{cp}$)\\
+thermisch aktivierte $\e^-$ von C nach B diff. ($I_{cn}$)\\
+\textbf{Voraussetzung:} sehr kleine Basisweite im Vergleich zur Diffusionslänge ($L_p \gg d_b$) $\Rightarrow I_{bb} = I_{ep} - I_{cp} \rightarrow 0$ \\
+Kompensation von Rekombination durch Bereitstellung von $\e^-$ ($I_{bb}$)\\
+Stromverstärkung = Transportfaktor $\cdot$ Emitterergiebigkeit\\
+$\alpha = \beta_T\gamma \leq 1$\qquad
+$\beta_T = \frac{\text{C-B-Übergang erreichender Elektronenstrom}}{\text{von E in B injizierter Elektronenstrom}}$\\
+$\alpha = \frac{\ir Kollektorstrom}{\ir Emitterstrom}$\qquad
+$\gamma = \frac{\text{in die Basis injizierter Elektronenstrom}}{\text{gesamter Emitterstrom}}$\\
+
+Große Spannungsverstärkung (Basis-Schaltung): $U_L = \alpha I_eR_L = \alpha u_{\ir eb} \frac{R_L}{r}$\\
+Vereinfachtes Kleinsignal-ESB:\\
+Auffassung des Transistors als Vierpol\\
+$\mat{h_{11} & h_{12} \\ h_{21} & h_{22} } \mat{i_1 \\ u_2} = \mat{u_1 \\ i_2}$\\
+Emitterschaltung (Näherung $\alpha r_c \gg r_e$):\\
+$\underset{\ir Eingangswiderstand bei kurzgeschl. Ausgang}{h_{12} = \frac{u_1}{i_1}\big|_{u_2=0} = -\frac{\partial U_{eb}}{\partial I_b}\big|_{U_{ce}} \approx r_b+\frac{r_e}{1-\alpha}}$ \ \\
+$\underset{\ir Leerlauf-Spannungsr"uckgewinnung}{h_{12} = \frac{u_1}{u_2}\big|_{i_1=0} = -\frac{\partial U_{eb}}{\partial U_{ce}}\big|_{I_b} \approx \frac{r_e}{r_c(1-\alpha)}}$ \\
+$\underset{\ir Kurzschluss-Stromverst"arkung}{h_{21} = \frac{i_2}{i_1}\big|_{u_2=0} = -\frac{\partial I_c}{\partial I_b}\big|_{U_{ce}} \approx \frac{\alpha}{1-\alpha}}$\\
+$\underset{\ir Leerlauf-Ausgangsleitwert}{h_{22} = \frac{i_2}{u_2}\big|_{i_1=0} = -\frac{\partial I_c}{\partial U_{ce}}\big|_{I_b} \approx \frac{1}{r_c(1-\alpha)}}$\\
 % Ende der Spalten
 \end{multicols*}
 
